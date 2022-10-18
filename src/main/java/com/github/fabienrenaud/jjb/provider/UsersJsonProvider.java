@@ -53,6 +53,8 @@ public class UsersJsonProvider implements JsonProvider<Users> {
     private final JsonType<Users> avajeJsonb_jackson = io.avaje.jsonb.Jsonb.newBuilder().adapter(new JacksonAdapter(/* serializeNulls */ true, /* serializeEmpty */ true, /* failOnUnknown */ false)).build().type(Users.class);
     private final JsonType<Users> avajeJsonb_default = io.avaje.jsonb.Jsonb.newBuilder().adapter(new JsonStream(/* serializeNulls */ true, /* serializeEmpty */ true, /* failOnUnknown */ false)).build().type(Users.class);
 
+	private final com.bigcloud.djomo.Json djomo = new com.bigcloud.djomo.Json();
+
     public UsersJsonProvider() {
         jacksonAfterburner.registerModule(new AfterburnerModule());
 
@@ -160,6 +162,11 @@ public class UsersJsonProvider implements JsonProvider<Users> {
     public JsonType<Users> avajeJsonb_default() {
         return avajeJsonb_default;
     }
+
+	@Override
+	public com.bigcloud.djomo.Json djomo() {
+		return djomo;
+	}
 
     private static final ThreadLocal<flexjson.JSONSerializer> FLEXJSON_SER = ThreadLocal.withInitial(flexjson.JSONSerializer::new);
 

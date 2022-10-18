@@ -52,4 +52,6 @@ public interface JsonProvider<T> {
     io.avaje.jsonb.JsonType<T> avajeJsonb_jackson();
 
     io.avaje.jsonb.JsonType<T> avajeJsonb_default();
+
+	com.bigcloud.djomo.Json djomo();
 }

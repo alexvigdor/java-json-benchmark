@@ -131,4 +131,9 @@ public class Deserialization extends JsonBench {
         return com.jsoniter.JsonIterator.deserialize(JSON_SOURCE().nextByteArray(), JSON_SOURCE().pojoType());
     }
 
+	@Benchmark
+	@Override
+	public Object djomo() throws Exception {
+		return JSON_SOURCE().provider().djomo().read(JSON_SOURCE().nextByteArray(), JSON_SOURCE().pojoType());
+	}
 }

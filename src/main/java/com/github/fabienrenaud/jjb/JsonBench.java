@@ -122,4 +122,8 @@ public abstract class JsonBench {
     public Object avajejsonb() throws Exception {
         return null;
     }
+
+	public Object djomo() throws Exception {
+		return null;
+	}
 }

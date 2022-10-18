@@ -34,7 +34,8 @@ public enum BenchSupport {
         new Libapi(Library.MINIMALJSON, Api.STREAM),
         new Libapi(Library.MJSON, Api.STREAM),
         new Libapi(Library.UNDERSCORE_JAVA, Api.STREAM),
-        new Libapi(Library.PUREJSON, Api.STREAM)
+        new Libapi(Library.PUREJSON, Api.STREAM),
+        new Libapi(Library.DJOMO, Api.DATABIND)
     ),
     CLIENTS(
             new Libapi(Library.GSON, Api.DATABIND),
@@ -62,7 +63,8 @@ public enum BenchSupport {
             new Libapi(Library.TAPESTRY),
             new Libapi(Library.JSONITER, Api.DATABIND),
             new Libapi(Library.MINIMALJSON),
-            new Libapi(Library.UNDERSCORE_JAVA)
+            new Libapi(Library.UNDERSCORE_JAVA),
+            new Libapi(Library.DJOMO, Api.DATABIND)
     );
 
     private final List<Libapi> libapis;

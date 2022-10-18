@@ -154,6 +154,8 @@ public class ClientsJsonProvider implements JsonProvider<Clients> {
 
     private final Map<String, Object> jsonioStreamOptions = new HashMap<>();
 
+	private final com.bigcloud.djomo.Json djomo = new com.bigcloud.djomo.Json();
+
     public ClientsJsonProvider() {
 
         jsonioStreamOptions.put(JsonReader.USE_MAPS, true);
@@ -266,6 +268,11 @@ public class ClientsJsonProvider implements JsonProvider<Clients> {
     public com.squareup.moshi.JsonAdapter<Clients> moshi() {
         return moshi;
     }
+
+	@Override
+	public com.bigcloud.djomo.Json djomo() {
+		return djomo;
+	}
 
     private static final ThreadLocal<JSONSerializer> FLEXJSON_SER = ThreadLocal.withInitial(() -> new JSONSerializer()
             .transform(FLEX_IDENTITY, UUID.class)
